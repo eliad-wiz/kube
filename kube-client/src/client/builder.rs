@@ -161,7 +161,7 @@ where
             // [Semantic Conventions]: https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/semantic_conventions/http.md
             TraceLayer::new_for_http()
                 .make_span_with(|req: &Request<Body>| {
-                    tracing::debug_span!(
+                    tracing::error_span!(
                         "HTTP",
                          http.method = %req.method(),
                          http.url = %req.uri(),
